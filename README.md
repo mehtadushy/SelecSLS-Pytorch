@@ -1,28 +1,7 @@
 # SelecSLS Convolutional Neural Network Pytorch Implementation
 Reference ImageNet implementation of SelecSLS Convolutional Neural Network architecture proposed in [XNect: Real-time Multi-person 3D Human Pose Estimation with a Single RGB Camera](https://arxiv.org/abs/1907.00837).
 
-
-# SelecSLS (Selective Short and Long Range Skip Connections)
-The key feature of the proposed architecture is that unlike the full dense connectivity in DenseNets, SelecSLS uses a much sparser skip connectivity pattern that uses both long and short-range concatenative-skip connections.
-
 The network architecture is 1.2-1.5x faster than ResNet-50, particularly for larger image sizes, with the same level of accuracy on different tasks! Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
-
-Additionally, the network architecture is more amenable to filter/channel pruning than ResNets.
-
-
-## Usage
-This repo provides the model definition in Pytorch, trained weights for ImageNet, and code for evaluating the forward pass time
-and the accuracy of the trained model on ImageNet validation set. 
-In the paper, the model has been used for the task of human pose estimation, and can also be applied to a myriad of other problems as a drop in replacement for ResNet-50.
-
-```
-wget http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth -o ./weights/SelecSLS60_statedict.pth
-python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS60 --input_size 512 --gpu_id <id>
-python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
-```
-
-## Pretrained Models
-- [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth)
 
 ## ImageNet results
     
@@ -87,6 +66,27 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --m
 </table>
 
 The inference time is measured on a TITAN X GPU
+
+# SelecSLS (Selective Short and Long Range Skip Connections)
+The key feature of the proposed architecture is that unlike the full dense connectivity in DenseNets, SelecSLS uses a much sparser skip connectivity pattern that uses both long and short-range concatenative-skip connections. Additionally, the network architecture is more amenable to filter/channel pruning than ResNets.
+You can find more details in the [paper](https://arxiv.org/abs/1907.00837).
+
+
+## Usage
+This repo provides the model definition in Pytorch, trained weights for ImageNet, and code for evaluating the forward pass time
+and the accuracy of the trained model on ImageNet validation set. 
+In the paper, the model has been used for the task of human pose estimation, and can also be applied to a myriad of other problems as a drop in replacement for ResNet-50.
+
+```
+wget http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth -o ./weights/SelecSLS60_statedict.pth
+python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS60 --input_size 512 --gpu_id <id>
+python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
+```
+
+## Pretrained Models
+- [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth)
+
+
 
 
 
