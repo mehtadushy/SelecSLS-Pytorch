@@ -31,7 +31,7 @@ The network architecture is 1.2-1.5x faster than ResNet-50, particularly for lar
     <td></td>
   </tr>
   <tr>
-    <td>ResNet50</td>
+    <td>ResNet-50</td>
     <td>15.0</td>
     <td>175.0</td>
     <td>11.0</td>
@@ -42,7 +42,7 @@ The network architecture is 1.2-1.5x faster than ResNet-50, particularly for lar
     <td>7.13</td>
   </tr>
   <tr>
-    <td>VoVNet39</td>
+    <td>VoVNet-39</td>
     <td>13.0</td>
     <td>197.0</td>
     <td>10.8</td>
@@ -53,7 +53,7 @@ The network architecture is 1.2-1.5x faster than ResNet-50, particularly for lar
     <td>6.57</td>
   </tr>
   <tr>
-    <td>SelecSLS60</td>
+    <td>SelecSLS-60</td>
     <td>11.0</td>
     <td>115.0</td>
     <td>9.5</td>
