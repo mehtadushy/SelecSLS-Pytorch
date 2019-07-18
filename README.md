@@ -71,6 +71,7 @@ The inference time is measured on a TITAN X GPU
 The key feature of the proposed architecture is that unlike the full dense connectivity in DenseNets, SelecSLS uses a much sparser skip connectivity pattern that uses both long and short-range concatenative-skip connections. Additionally, the network architecture is more amenable to filter/channel pruning than ResNets.
 You can find more details in the [paper](https://arxiv.org/abs/1907.00837).
 
+Another recent paper proposed the VoVNet architecture, which shares some design similarities with our architecture. However, as shown in the above table, our architecture is significantly faster than both VoVNet-39 and ResNet-50 for larger batch sizes as well as larger image sizes.
 
 ## Usage
 This repo provides the model definition in Pytorch, trained weights for ImageNet, and code for evaluating the forward pass time
