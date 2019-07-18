@@ -6,7 +6,7 @@ particularly with larger image sizes. The network architecture has a much smalle
 footprint, and can be used as a drop in replacement for ResNet-50 in various tasks.
 This Pytorch implementation establishes an official baseline of the model on ImageNet
 
-Author: Dushyant Mehta (dmehta[at]mpi-inf.mpg.de)
+Code Author: Dushyant Mehta (dmehta[at]mpi-inf.mpg.de)
 '''
 from __future__ import absolute_import
 import torch
