@@ -89,7 +89,17 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --m
 - [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth)
 
 
+## Citing
+If you find the model useful in your work, please consider citing:
 
+```
+@article{mehta2019xnect,
+  title={XNect: Real-time Multi-person 3D Human Pose Estimation with a Single RGB Camera},
+  author={Mehta, Dushyant and Sotnychenko, Oleksandr and Mueller, Franziska and Xu, Weipeng and Elgharib, Mohamed and Fua, Pascal and Seidel, Hans-Peter and Rhodin, Helge and Pons-Moll, Gerard and Theobalt, Christian},
+  journal={arXiv preprint arXiv:1907.00837},
+  year={2019}
+}
+```
 
 
 
