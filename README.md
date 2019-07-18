@@ -88,6 +88,9 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --m
 ## Pretrained Models
 - [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth)
 
+## Requirements
+ - Python 3.5
+ - Pytorch >= 1.1
 
 ## Citing
 If you find the model useful in your work, please consider citing:
