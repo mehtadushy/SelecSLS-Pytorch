@@ -66,7 +66,7 @@ Further, it takes substantially less memory while training, so it can be trained
   </tr>
 </table>
 
-The inference time is measured on a TITAN X GPU
+The inference time for all models above is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).
 
 # SelecSLS (Selective Short and Long Range Skip Connections)
 The key feature of the proposed architecture is that unlike the full dense connectivity in DenseNets, SelecSLS uses a much sparser skip connectivity pattern that uses both long and short-range concatenative-skip connections. Additionally, the network architecture is more amenable to filter/channel pruning than ResNets.
