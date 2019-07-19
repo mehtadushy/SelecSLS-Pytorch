@@ -1,7 +1,7 @@
 # SelecSLS Convolutional Net Pytorch Implementation
 Reference ImageNet implementation of SelecSLS Convolutional Neural Network architecture proposed in [XNect: Real-time Multi-person 3D Human Pose Estimation with a Single RGB Camera](https://arxiv.org/abs/1907.00837).
 
-The network architecture is 1.2-1.5x faster than ResNet-50, particularly for larger image sizes, with the same level of accuracy on different tasks! 
+The network architecture is 1.3-1.5x faster than ResNet-50, particularly for larger image sizes, with the same level of accuracy on different tasks! 
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
 
 ## ImageNet results
