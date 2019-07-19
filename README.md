@@ -93,7 +93,7 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --m
  - Pytorch >= 1.1
 
 ## Citing
-If you find the model useful in your work, please consider citing:
+If you find use for the model in your work, please cite:
 
 ```
 @article{mehta2019xnect,
