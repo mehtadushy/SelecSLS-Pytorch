@@ -127,7 +127,7 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS84 --m
 
 ## Pretrained Models
 - [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth)
-- [SelecSLS-84](people.mpi-inf.mpg.de/~dmehta/XNectDemoV2/SelecSLS84_statedict.pth)
+- [SelecSLS-84](http://people.mpi-inf.mpg.de/~dmehta/XNectDemoV2/SelecSLS84_statedict.pth)
 
 ## Requirements
  - Python 3.5
