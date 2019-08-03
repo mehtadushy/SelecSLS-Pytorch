@@ -5,7 +5,7 @@ The network architecture is 1.3-1.5x faster than ResNet-50, particularly for lar
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
 
 ### !!New!!
-Code for pruning the model based on [Implicit Filter Level Sparsity](http://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html) is also a part of the model now. The sparsity is a natural consequence of training with adaptive gradient descent approaches and L2 regularization. It gives a further speedup of **10-30%** on the pretrained models with no loss in accuracy. See usage and results below.
+Code for pruning the model based on [Implicit Filter Level Sparsity](http://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html) is also a part of the [SelecSLS model](https://github.com/mehtadushy/SelecSLS-Pytorch/blob/master/models/selecsls.py#L280) now. The sparsity is a natural consequence of training with adaptive gradient descent approaches and L2 regularization. It gives a further speedup of **10-30%** on the pretrained models with no loss in accuracy. See usage and results below.
 
 ## ImageNet results
     
