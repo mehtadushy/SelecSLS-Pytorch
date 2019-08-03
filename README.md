@@ -4,6 +4,9 @@ Reference ImageNet implementation of SelecSLS Convolutional Neural Network archi
 The network architecture is 1.3-1.5x faster than ResNet-50, particularly for larger image sizes, with the same level of accuracy on different tasks! 
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
 
+### !!New!!
+Code for pruning the model based on [Implicit Filter Level Sparsity](http://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html) is also a part of the model now. It gives a further speedup of 10-15% on the pretrained models with no loss in accuracy.
+
 ## ImageNet results
     
 <table>
@@ -64,6 +67,18 @@ Further, it takes substantially less memory while training, so it can be trained
     <td>23.78</td>
     <td>7.04</td>
   </tr>
+  <tr>
+    <td>SelecSLS-60</td>
+    <td>11.0</td>
+    <td>115.0</td>
+    <td>9.5</td>
+    <td>85.0</td>
+    <td>7.3</td>
+    <td>29.0</td>
+    <td>23.78</td>
+    <td>7.04</td>
+  </tr>
+  * (P) indicates that the model has batch norm fusion and pruning applied
 </table>
 
 The inference time for all models above is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).
@@ -87,13 +102,14 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --m
 
 ## Pretrained Models
 - [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth)
+- [SelecSLS-84](people.mpi-inf.mpg.de/~dmehta/XNectDemoV2/SelecSLS84_statedict.pth)
 
 ## Requirements
  - Python 3.5
  - Pytorch >= 1.1
 
 ## Citing
-If you find use for the model in your work, please cite:
+If you find use for the model or the implicit pruning based speedup in your work, please cite:
 
 ```
 @article{mehta2019xnect,
@@ -102,6 +118,14 @@ If you find use for the model in your work, please cite:
   journal={arXiv preprint arXiv:1907.00837},
   year={2019}
 }
+
+@InProceedings{Mehta_2019_CVPR,
+author = {Mehta, Dushyant and Kim, Kwang In and Theobalt, Christian},
+title = {On Implicit Filter Level Sparsity in Convolutional Neural Networks},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2019}
+} 
 ```
 
 
