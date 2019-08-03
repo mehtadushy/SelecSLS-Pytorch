@@ -278,16 +278,19 @@ class Net(nn.Module):
 
 
     def prune_and_fuse(self, gamma_thresh, verbose=False):
-        ''' Iterate over the modules in the model and prune different parts, by name.
-        Do not worry about the layers made redundant, they can be removed from storage by tracing with the JIT module'''
+        ''' Function that iterates over the modules in the model and prunes different parts by name. Sparsity emerges implicitly due to the use of
+        adaptive gradient descent approaches such as Adam, in conjunction with L2 or WD regularization on the parameters. The filters
+        that are implicitly zeroed out can be explicitly pruned without any impact on the model accuracy (and might even improve in some cases).
+        '''
         #This function assumes a specific structure. If the structure of stem or head is changed, this code would need to be changed too
         #Also, this be ugly. Needs to be written better, but is at least functional
+        #Perhaps one need not worry about the layers made redundant, they can be removed from storage by tracing with the JIT module??
 
         #We bring everything to the CPU, then later restore the device
         device = next(self.parameters()).device
         self.to("cpu")
         with torch.no_grad():
-            #Assumes that stem is flat and has conv,bn,relu in order. Can handle one or more of these
+            #Assumes that stem is flat and has conv,bn,relu in order. Can handle one or more of these if one wants to deepen the stem.
             new_stem = []
             input_validity = torch.ones(3)
             for i in range(0,len(self.stem),3):
