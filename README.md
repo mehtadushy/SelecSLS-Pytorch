@@ -5,7 +5,7 @@ The network architecture is 1.3-1.5x faster than ResNet-50, particularly for lar
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
 
 ### !!New!!
-Code for pruning the model based on [Implicit Filter Level Sparsity](http://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html) is also a part of the model now. It gives a further speedup of 10-15% on the pretrained models with no loss in accuracy.
+Code for pruning the model based on [Implicit Filter Level Sparsity](http://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html) is also a part of the model now. The sparsity is a natural consequence of training with adaptive gradient descent approaches and L2 regularization. It gives a further speedup of **10-30%** on the pretrained models with no loss in accuracy. See usage and results below.
 
 ## ImageNet results
     
@@ -68,16 +68,37 @@ Code for pruning the model based on [Implicit Filter Level Sparsity](http://open
     <td>7.04</td>
   </tr>
   <tr>
-    <td>SelecSLS-60</td>
-    <td>11.0</td>
-    <td>115.0</td>
-    <td>9.5</td>
-    <td>85.0</td>
-    <td>7.3</td>
-    <td>29.0</td>
+    <td>SelecSLS-60 (P)</td>
+    <td>10.2</td>
+    <td>102.0</td>
+    <td>8.2</td>
+    <td>71.0</td>
+    <td>6.1</td>
+    <td>25.0</td>
     <td>23.78</td>
     <td>7.04</td>
   </tr>
+  <tr>  
+   <td>SelecSLS-84</td>
+    <td>16.1</td>
+    <td>175.0</td>
+    <td>13.7</td>
+    <td>124.0</td>
+    <td>9.9</td>
+    <td>42.3</td>
+    <td>23.25</td>
+    <td>6.89</td>
+  </tr>  
+    <td>SelecSLS-84 (P)</td>
+    <td>11.9</td>
+    <td>119.0</td>
+    <td>10.1</td>
+    <td>82.0</td>
+    <td>7.6</td>
+    <td>28.6</td>
+    <td>23.25</td>
+    <td>6.89</td>
+  </tr>     
   * (P) indicates that the model has batch norm fusion and pruning applied
 </table>
 
@@ -96,8 +117,12 @@ In the paper, the model has been used for the task of human pose estimation, and
 
 ```
 wget http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth -o ./weights/SelecSLS60_statedict.pth
-python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS60 --input_size 512 --gpu_id <id>
+wget people.mpi-inf.mpg.de/~dmehta/XNectDemoV2/SelecSLS84_statedict.pth -o ./weights/SelecSLS84_statedict.pth
+python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --input_size 512 --gpu_id <id>
 python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
+#For Pruning the Model
+python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS84 --model_weights ./weights/SelecSLS84_statedict.pth --input_size 512 --pruned_and_fused True --gamma_thresh 0.001 --gpu_id <id>
+python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS84_statedict.pth --pruned_and_fused True --gamma_thresh 0.001 --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
 ```
 
 ## Pretrained Models
@@ -109,7 +134,7 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --m
  - Pytorch >= 1.1
 
 ## Citing
-If you find use for the model or the implicit pruning based speedup in your work, please cite:
+If you find use for the model or the implicit sparisty based pruning in your work, please cite:
 
 ```
 @article{mehta2019xnect,
