@@ -36,7 +36,7 @@ def conv_1x1_bn(inp, oup):
     )
 
 def bn_fuse(c, b):
-    ''' assumes everything is on the cpu'''
+    ''' BN fusion code adapted from my Caffe BN fusion code and code from @MIPT-Oulu. This function assumes everything is on the cpu'''
     with torch.no_grad():
         # BatchNorm params
         eps = b.eps
