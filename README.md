@@ -117,9 +117,9 @@ In the paper, the model has been used for the task of human pose estimation, and
 
 ```
 wget http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth -o ./weights/SelecSLS60_statedict.pth
-wget people.mpi-inf.mpg.de/~dmehta/XNectDemoV2/SelecSLS84_statedict.pth -o ./weights/SelecSLS84_statedict.pth
 python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --input_size 512 --gpu_id <id>
 python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
+
 #For pruning the model, and evaluating the pruned model (Using SelecSLS60 or other pretrained models)
 python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS84 --model_weights ./weights/SelecSLS84_statedict.pth --input_size 512 --pruned_and_fused True --gamma_thresh 0.001 --gpu_id <id>
 python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS84 --model_weights ./weights/SelecSLS84_statedict.pth --pruned_and_fused True --gamma_thresh 0.001 --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
