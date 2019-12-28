@@ -5,14 +5,15 @@ The network architecture is 1.3-1.5x faster than ResNet-50, particularly for lar
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
 
 ### Update (28 Dec 2019)
-Better and more accurate models / snapshots are now available.
+Better and more accurate models / snapshots are now available. See the additional ImageNet table below.
 
 ### Update (14 Oct 2019) 
 Code for pruning the model based on [Implicit Filter Level Sparsity](http://openaccess.thecvf.com/content_CVPR_2019/html/Mehta_On_Implicit_Filter_Level_Sparsity_in_Convolutional_Neural_Networks_CVPR_2019_paper.html) is also a part of the [SelecSLS model](https://github.com/mehtadushy/SelecSLS-Pytorch/blob/master/models/selecsls.py#L280) now. The sparsity is a natural consequence of training with adaptive gradient descent approaches and L2 regularization. It gives a further speedup of **10-30%** on the pretrained models with no loss in accuracy. See usage and results below.
 
 ## ImageNet results
-    
+
 <table>
+    The inference time for all models here is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).    
   <tr>
     <th></th>
     <th colspan="6">Forward Pass Time (ms)<br>for different image resolutions</th>
@@ -104,9 +105,10 @@ Code for pruning the model based on [Implicit Filter Level Sparsity](http://open
   </tr>     
   * (P) indicates that the model has batch norm fusion and pruning applied
 </table>
-The inference time for all models above is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).
+
 
 <table>
+  These models are trained using Cosine LR, Random Erasing, EMA, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts.
   <tr>
     <th></th>
     <th colspan="6">Forward Pass Time (ms)<br>for different image resolutions</th>
@@ -164,9 +166,9 @@ The inference time for all models above is measured on a TITAN X GPU using the a
     <td>21.6</td>
     <td>5.8</td>
   </tr>
-  These models are trained using Cosine LR, Random Erasing, EMA, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models).
+  
 </table>
-The inference time for all models above is measured on a TITAN Xp GPU using the accompanying scripts.
+
 
 
 # SelecSLS (Selective Short and Long Range Skip Connections)
