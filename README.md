@@ -4,6 +4,9 @@ Reference ImageNet implementation of SelecSLS Convolutional Neural Network archi
 The network architecture is 1.3-1.5x faster than ResNet-50, particularly for larger image sizes, with the same level of accuracy on different tasks! 
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
 
+### Update (28 Dec 2019)
+Better and more accurate models / snapshots are now available!
+
 ## ImageNet results
     
 <table>
@@ -39,8 +42,8 @@ Further, it takes substantially less memory while training, so it can be trained
     <td>114.0</td>
     <td>7.2</td>
     <td>39.0</td>
-    <td>23.85</td>
-    <td>7.13</td>
+    <td>23.9</td>
+    <td>7.1</td>
   </tr>
   <tr>
     <td>VoVNet-39</td>
@@ -50,8 +53,8 @@ Further, it takes substantially less memory while training, so it can be trained
     <td>130.0</td>
     <td>6</td>
     <td>41.0</td>
-    <td>23.23</td>
-    <td>6.57</td>
+    <td>23.2</td>
+    <td>6.6</td>
   </tr>
   <tr>
     <td>SelecSLS-60</td>
@@ -61,8 +64,43 @@ Further, it takes substantially less memory while training, so it can be trained
     <td>85.0</td>
     <td>7.3</td>
     <td>29.0</td>
-    <td>23.78</td>
-    <td>7.04</td>
+    <td>23.8</td>
+    <td>7.0</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td>SelecSLS-42_B</td>
+    <td>11.0</td>
+    <td>115.0</td>
+    <td>9.5</td>
+    <td>85.0</td>
+    <td>7.3</td>
+    <td>29.0</td>
+    <td>22.9</td>
+    <td>6.6</td>
+  </tr>
+  <tr>
+    <td>SelecSLS-60</td>
+    <td>11.0</td>
+    <td>115.0</td>
+    <td>9.5</td>
+    <td>85.0</td>
+    <td>7.3</td>
+    <td>29.0</td>
+    <td>22.1</td>
+    <td>6.1</td>
+  </tr>
+  <tr>
+    <td>SelecSLS-60_B</td>
+    <td>11.0</td>
+    <td>115.0</td>
+    <td>9.5</td>
+    <td>85.0</td>
+    <td>7.3</td>
+    <td>29.0</td>
+    <td>21.6</td>
+    <td>5.8</td>
   </tr>
 </table>
 

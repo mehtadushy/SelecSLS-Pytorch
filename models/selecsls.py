@@ -175,7 +175,47 @@ class Net(nn.Module):
 
         #Core Network
         self.features = []
-        if config=='SelecSLS60':
+        if config=='SelecSLS42':
+            print('SelecSLS42')
+            #Define configuration of the network after the initial neck
+            self.selecSLS_config = [
+                #inp,skip, k, oup, isFirst, stride
+                [ 32,   0,  64,  64,  True,  2],
+                [ 64,  64,  64, 128,  False, 1],
+                [128,   0, 144, 144,  True,  2],
+                [144, 144, 144, 288,  False, 1],
+                [288,   0, 304, 304,  True,  2],
+                [304, 304, 304, 480,  False, 1],
+            ]
+            #Head can be replaced with alternative configurations depending on the problem
+            self.head = nn.Sequential(
+                    conv_bn(480, 960, 2),
+                    conv_bn(960, 1024, 1),
+                    conv_bn(1024, 1024, 2),
+                    conv_1x1_bn(1024, 1280),
+                    )
+            self.num_features = 1280
+        elif config=='SelecSLS42_B':
+            print('SelecSLS42_B')
+            #Define configuration of the network after the initial neck
+            self.selecSLS_config = [
+                #inp,skip, k, oup, isFirst, stride
+                [ 32,   0,  64,  64,  True,  2],
+                [ 64,  64,  64, 128,  False, 1],
+                [128,   0, 144, 144,  True,  2],
+                [144, 144, 144, 288,  False, 1],
+                [288,   0, 304, 304,  True,  2],
+                [304, 304, 304, 480,  False, 1],
+            ]
+            #Head can be replaced with alternative configurations depending on the problem
+            self.head = nn.Sequential(
+                    conv_bn(480, 960, 2),
+                    conv_bn(960, 1024, 1),
+                    conv_bn(1024, 1280, 2),
+                    conv_1x1_bn(1280, 1024),
+                    )
+            self.num_features = 1024
+        elif config=='SelecSLS60':
             print('SelecSLS60')
             #Define configuration of the network after the initial neck
             self.selecSLS_config = [
@@ -197,6 +237,30 @@ class Net(nn.Module):
                     conv_bn(1024, 1024, 2),
                     conv_1x1_bn(1024, 1280),
                     )
+            self.num_features = 1280
+        elif config=='SelecSLS60_B':
+            print('SelecSLS60_B')
+            #Define configuration of the network after the initial neck
+            self.selecSLS_config = [
+                #inp,skip, k, oup, isFirst, stride
+                [ 32,   0,  64,  64,  True,  2],
+                [ 64,  64,  64, 128,  False, 1],
+                [128,   0, 128, 128,  True,  2],
+                [128, 128, 128, 128,  False, 1],
+                [128, 128, 128, 288,  False, 1],
+                [288,   0, 288, 288,  True,  2],
+                [288, 288, 288, 288,  False, 1],
+                [288, 288, 288, 288,  False, 1],
+                [288, 288, 288, 416,  False, 1],
+            ]
+            #Head can be replaced with alternative configurations depending on the problem
+            self.head = nn.Sequential(
+                    conv_bn(416, 756, 2),
+                    conv_bn(756, 1024, 1),
+                    conv_bn(1024, 1280, 2),
+                    conv_1x1_bn(1280, 1024),
+                    )
+            self.num_features = 1024
         elif config=='SelecSLS84':
             print('SelecSLS84')
             #Define configuration of the network after the initial neck
@@ -223,6 +287,7 @@ class Net(nn.Module):
                     conv_bn(1024, 1024, 2),
                     conv_1x1_bn(1024, 1280),
                     )
+            self.num_features = 1280
         elif config=='SelecSLS102':
             print('SelecSLS102')
             #Define configuration of the network after the initial neck
@@ -252,6 +317,7 @@ class Net(nn.Module):
                     conv_bn(1024, 1024, 2),
                     conv_1x1_bn(1024, 1280),
                     )
+            self.num_features = 1280
         else:
             raise ValueError('Invalid net configuration '+config+' !!!')
 
@@ -262,7 +328,7 @@ class Net(nn.Module):
 
         #Classifier To Produce Inputs to Softmax
         self.classifier = nn.Sequential(
-                nn.Linear(1280, nClasses),
+                nn.Linear(self.num_features, nClasses),
         )
 
 
