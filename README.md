@@ -107,7 +107,7 @@ The inference time for all models here is measured on a TITAN X GPU using the ac
 </table>
 
 
-These models are trained using Cosine LR, Random Erasing, EMA, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts.
+These models are trained using Cosine LR, Random Erasing, EMA, *Bicubic* Interpolation, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts. The script for evaluating ImageNet performance uses *Bilinear* interpolation, hence the results reported here are marginally worse than they would be with Bicubic interpolation at inference. 
 
 <table>
   
