@@ -12,8 +12,8 @@ Code for pruning the model based on [Implicit Filter Level Sparsity](http://open
 
 ## ImageNet results
 
+The inference time for all models here is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).    
 <table>
-    The inference time for all models here is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).    
   <tr>
     <th></th>
     <th colspan="6">Forward Pass Time (ms)<br>for different image resolutions</th>
@@ -107,8 +107,10 @@ Code for pruning the model based on [Implicit Filter Level Sparsity](http://open
 </table>
 
 
+These models are trained using Cosine LR, Random Erasing, EMA, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts.
+
 <table>
-  These models are trained using Cosine LR, Random Erasing, EMA, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts.
+  
   <tr>
     <th></th>
     <th colspan="6">Forward Pass Time (ms)<br>for different image resolutions</th>
