@@ -195,13 +195,13 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS84 --m
 ```
 
 ## Older Pretrained Models
-- [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS60_statedict.pth)
-- [SelecSLS-84](http://people.mpi-inf.mpg.de/~dmehta/XNect/assets/models/SelecSLS84_statedict.pth)
+- [SelecSLS-60](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_statedict.pth)
+- [SelecSLS-84](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS84_statedict.pth)
 
 ## Newer Pretrained Models
-- [SelecSLS-42_B](http://people.mpi-inf.mpg.de/~dmehta/XNect/assets/models/SelecSLS42_B_statedict.pth)
-- [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS60_statedict_better.pth)
-- [SelecSLS-60_B](http://people.mpi-inf.mpg.de/~dmehta/XNect/assets/models/SelecSLS60_B_statedict.pth)
+- [SelecSLS-42_B](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS42_B_statedict.pth)
+- [SelecSLS-60](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_statedict_better.pth)
+- [SelecSLS-60_B](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_B_statedict.pth)
 
 ## Requirements
  - Python 3.5
