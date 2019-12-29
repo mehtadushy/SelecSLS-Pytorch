@@ -79,8 +79,8 @@ The inference time for the models in the table below is measured on a TITAN X GP
     <td>71.0</td>
     <td>6.1</td>
     <td>25.0</td>
-    <td>23.78</td>
-    <td>7.04</td>
+    <td>23.8</td>
+    <td>7.0</td>
   </tr>
   <tr>  
    <td>SelecSLS-84</td>
@@ -90,8 +90,8 @@ The inference time for the models in the table below is measured on a TITAN X GP
     <td>124.0</td>
     <td>9.9</td>
     <td>42.3</td>
-    <td>23.25</td>
-    <td>6.89</td>
+    <td>23.3</td>
+    <td>6.9</td>
   </tr>  
     <td>SelecSLS-84 (P)</td>
     <td>11.9</td>
@@ -100,8 +100,8 @@ The inference time for the models in the table below is measured on a TITAN X GP
     <td>82.0</td>
     <td>7.6</td>
     <td>28.6</td>
-    <td>23.25</td>
-    <td>6.89</td>
+    <td>23.3</td>
+    <td>6.9</td>
   </tr>     
   * (P) indicates that the model has batch norm fusion and pruning applied
 </table>
