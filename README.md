@@ -12,12 +12,12 @@ Code for pruning the model based on [Implicit Filter Level Sparsity](http://open
 
 ## ImageNet results
 
-The inference time for all models here is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).    
+The inference time for the models in the table below is measured on a TITAN X GPU using the accompanying scripts. The accuracy results for ResNet-50 are from torchvision, and the accuracy results for VoVNet-39 are from [VoVNet](https://github.com/stigma0617/VoVNet.pytorch).    
 <table>
   <tr>
     <th></th>
     <th colspan="6">Forward Pass Time (ms)<br>for different image resolutions</th>
-    <th colspan="2">ImageNet<br>Accuracy</th>
+    <th colspan="2">ImageNet<br>Error</th>
   </tr>
   <tr>
     <td></td>
@@ -107,14 +107,14 @@ The inference time for all models here is measured on a TITAN X GPU using the ac
 </table>
 
 
-These models are trained using Cosine LR, Random Erasing, EMA, *Bicubic* Interpolation, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts. The script for evaluating ImageNet performance uses *Bilinear* interpolation, hence the results reported here are marginally worse than they would be with Bicubic interpolation at inference. 
+The following models are trained using Cosine LR, Random Erasing, EMA, *Bicubic* Interpolation, and Color Jitter using [rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models). The inference time for models here is measured on a TITAN Xp GPU using the accompanying scripts. The script for evaluating ImageNet performance uses *Bilinear* interpolation, hence the results reported here are marginally worse than they would be with Bicubic interpolation at inference. 
 
 <table>
   
   <tr>
     <th></th>
     <th colspan="6">Forward Pass Time (ms)<br>for different image resolutions</th>
-    <th colspan="2">ImageNet<br>Accuracy</th>
+    <th colspan="2">ImageNet<br>Error</th>
   </tr>
   <tr>
     <td></td>
@@ -198,7 +198,7 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS84 --m
 - [SelecSLS-60](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_statedict.pth)
 - [SelecSLS-84](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS84_statedict.pth)
 
-## Newer Pretrained Models
+## Newer Pretrained Models (More Accurate)
 - [SelecSLS-42_B](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS42_B_statedict.pth)
 - [SelecSLS-60](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_statedict_better.pth)
 - [SelecSLS-60_B](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_B_statedict.pth)
