@@ -195,20 +195,20 @@ python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS84 --m
 ```
 
 ## Older Pretrained Models
-- [SelecSLS-60](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_statedict.pth)
-- [SelecSLS-84](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS84_statedict.pth)
+- [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS60_statedict.pth)
+- [SelecSLS-84](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS84_statedict.pth)
 
 ## Newer Pretrained Models (More Accurate)
-- [SelecSLS-42_B](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS42_B_statedict.pth)
-- [SelecSLS-60](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_statedict_better.pth)
-- [SelecSLS-60_B](http://people.mpi-inf.mpg.de/~dmehta/xnect_models/SelecSLS60_B_statedict.pth)
+- [SelecSLS-42_B](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS42_B_statedict.pth)
+- [SelecSLS-60](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS60_statedict_better.pth)
+- [SelecSLS-60_B](http://gvv.mpi-inf.mpg.de/projects/XNect/assets/models/SelecSLS60_B_statedict.pth)
 
 ## Requirements
  - Python 3.5
  - Pytorch >= 1.1
 
 ## License 
-The contents of this repository are made available under CC BY 4.0. Please read the [license terms](https://creativecommons.org/licenses/by/4.0/legalcode).
+The contents of this repository, and the pretrained models are made available under CC BY 4.0. Please read the [license terms](https://creativecommons.org/licenses/by/4.0/legalcode).
 
 ### Citing
 If you use the model or the implicit sparisty based pruning in your work, please cite:
