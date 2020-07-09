@@ -185,7 +185,7 @@ and the accuracy of the trained model on ImageNet validation set.
 In the paper, the model has been used for the task of human pose estimation, and can also be applied to a myriad of other problems as a drop in replacement for ResNet-50.
 
 ```
-wget http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth -o ./weights/SelecSLS60_statedict.pth
+wget http://gvv.mpi-inf.mpg.de/projects/XNectDemoV2/content/SelecSLS60_statedict.pth -O ./weights/SelecSLS60_statedict.pth
 python evaluate_timing.py --num_iter 100 --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --input_size 512 --gpu_id <id>
 python evaluate_imagenet.py --model_class selecsls --model_config SelecSLS60 --model_weights ./weights/SelecSLS60_statedict.pth --gpu_id <id> --imagenet_base_path <path_to_imagenet_dataset>
 
