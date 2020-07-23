@@ -1,5 +1,6 @@
 # SelecSLS Convolutional Net Pytorch Implementation
-Reference ImageNet implementation of SelecSLS Convolutional Neural Network architecture proposed in [XNect: Real-time Multi-person 3D Human Pose Estimation with a Single RGB Camera](https://arxiv.org/abs/1907.00837).
+Reference ImageNet implementation of SelecSLS Convolutional Neural Network architecture proposed in [XNect: Real-time Multi-Person 3D Motion Capture
+with a Single RGB Camera](http://gvv.mpi-inf.mpg.de/projects/XNect/) (SIGGRAPH 2020).
 
 The network architecture is 1.3-1.5x faster than ResNet-50, particularly for larger image sizes, with the same level of accuracy on different tasks! 
 Further, it takes substantially less memory while training, so it can be trained with larger batch sizes!
@@ -214,12 +215,18 @@ The contents of this repository, and the pretrained models are made available un
 If you use the model or the implicit sparisty based pruning in your work, please cite:
 
 ```
-@article{mehta2019xnect,
-  title={XNect: Real-time Multi-person 3D Human Pose Estimation with a Single RGB Camera},
-  author={Mehta, Dushyant and Sotnychenko, Oleksandr and Mueller, Franziska and Xu, Weipeng and Elgharib, Mohamed and Fua, Pascal and Seidel, Hans-Peter and Rhodin, Helge and Pons-Moll, Gerard and Theobalt, Christian},
-  journal={arXiv preprint arXiv:1907.00837},
-  year={2019}
-}
+@inproceedings{XNect_SIGGRAPH2020,
+ author = {Mehta, Dushyant and Sotnychenko, Oleksandr and Mueller, Franziska and Xu, Weipeng and Elgharib, Mohamed and Fua, Pascal and Seidel, Hans-Peter and Rhodin, Helge and Pons-Moll, Gerard and Theobalt, Christian},
+ title = {{XNect}: Real-time Multi-Person {3D} Motion Capture with a Single {RGB} Camera},
+ journal = {ACM Transactions on Graphics},
+ url = {http://gvv.mpi-inf.mpg.de/projects/XNect/},
+ numpages = {17},
+ volume={39},
+ number={4},
+ month = July,
+ year = {2020},
+ doi={10.1145/3386569.3392410}
+} 
 
 @InProceedings{Mehta_2019_CVPR,
 author = {Mehta, Dushyant and Kim, Kwang In and Theobalt, Christian},
